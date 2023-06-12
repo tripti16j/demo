@@ -42,8 +42,8 @@ spec:
   system: platform
         
   consumesApis: 
-    - Auth0 Services
-    - CNS services
+    - Auth0_Services
+    - CNS_services
   dependencyOf: 
     - component:Credit
     - component:Pools
@@ -55,7 +55,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: Auth0 Services
+  name: Auth0_Services
 spec:
   type: openapi
   lifecycle: production
@@ -64,7 +64,7 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: CNS services
+  name: CNS_services
 spec:
   type: openapi
   lifecycle: production
