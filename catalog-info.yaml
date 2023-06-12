@@ -44,7 +44,7 @@ spec:
   consumesApis: 
     - Auth0 Services
     - CNS services
-  dependsOn: 
+  dependencyOf: 
     - component:Credit
     - component:Pools
     - component:Co-lending
