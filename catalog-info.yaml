@@ -1,10 +1,177 @@
+#apiVersion: backstage.io/v1alpha1
+#kind: Location
+#metadata:
+#  name: credit-team-all
+#  description: All employees part of credit team
+#spec:
+#  targets:
+#    - ./team/org.yaml
+#    - ./team/3p.yaml
+---
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: demo
+  name: Platform Service
+  description: plat auth
+  tags:
+    - jenkins
+    - jira 
+    - postman
+  system:
+    - ocs
   annotations:
-    github.com/project-slug: tripti16j/demo
+    documentation: "https://documenter.getpostman.com/view/15548094/"
+    
+    environment: "production"
+  links:
+    - url: https://goyubi.atlassian.net/jira/software/c/projects/CP/boards/53?quickFilter=186
+      title: Jira Dashboard
+      icon: dashboard
+      type: jira-dashboard
+    - url: https://jenkins.dso.credavenue.io/job/Platforms/job/UserAuth/job/Api/job/Prd/
+      title: Jenkins Dashboard
+      icon: dashboard
+      type: jenkins-dashboard
+    # - url: https://documenter.getpostman.com/view/15548094/TzXwFe7Q
+    #   title: APIs/Swagger link
+    #   icon: dashboard
+    #   type: postman-dashboard
+    # - url: https://documenter.getpostman.com/view/15548094/TzY7dtsP
+    #   title: User Service Apis
+    #   icon: dashboard
+    #   type: postman-dashboard
+    # - url: https://documenter.getpostman.com/view/15548094/2s847PKA4L
+    #   title: CNS
+    #   icon: dashboard
+    #   type: postman-dashboard
 spec:
-  type: other
-  lifecycle: unknown
-  owner: 3p-group
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: platform
+        
+  consumesApis: 
+    - [Auth0 Services]
+    - [CNS services]
+  dependsOn: 
+    - Credit
+    - Pools
+    - Co-lending
+    - SCF
+    - Loans
+    - Invest
+---
+
+
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: OCS
+spec:
+  owner: credit
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: CreditOCSService
+  description: OCSService APIs
+  labels:
+    example.com/custom: custom_label_value
+  annotations:
+    jenkins.io/job-full-name: Creditrating/CIR/OCSService/Int/build-image
+    jira/project-key: CRD
+    backstage.io/code-coverage: scm-only
+    backstage.io/techdocs-ref: dir:.
+    # jira/component: <example-component> # optional, you might skip this value to fetch data for all components
+    # jira/token-type: Bearer # optional, used for Activity stream feed. If you are using Basic auth you can skip this.
+  # Example for optional annotations
+  # annotations:
+  #   github.com/project-slug: backstage/backstage
+  #   backstage.io/techdocs-ref: dir:.
+  tags:
+    - java
+    - gradle
+  links:
+    - url: https://goyubi.atlassian.net/wiki/spaces/CRED/overview
+      title: OCS Confluence
+      icon: dashboard
+      type: ocs-confluence-dashboard
+spec:
+  type: service
+  owner: group:credit
+  lifecycle: production
+  system: OCS
+  providesApis:
+#    - test-api
+    - flex-api
+  consumesApis:
+    - 3p-apis
+  dependsOn:
+    - resource:ocs-db
+    - component:3p-component
+---
+#apiVersion: backstage.io/v1alpha1
+#kind: API
+#metadata:
+#  name: test-api
+#spec:
+#  type: grpc
+#  lifecycle: experimental
+#  owner: user:venkata-sandeep-godavarthi
+#  system: OCS
+#  definition: |
+#    syntax = "proto3";
+#
+#    service Exampler {
+#      rpc Example (ExampleMessage) returns (ExampleMessage) {};
+#    }
+#
+#    message ExampleMessage {
+#      string example = 1;
+#    };
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: flex-api
+spec:
+  type: openapi
+  lifecycle: production
+  owner: group:credit
+  system: OCS
+  definition:
+    $text: https://cir-ocs-qa.go-yubi.in/v2/api-docs
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: 3p-apis
+spec:
+  type: openapi
+  lifecycle: production
+  owner: thirdparty
+  definition:
+    $text: https://3p-cir-qa.go-yubi.in/v2/api-docs
+---
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ocs-db
+  description: Stores OCS data in Mongo db
+spec:
+  type: database
+  owner: credit
+  system: OCS
+  lifecycle: production
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: 3p-component
+  description: Third party APIs service
+spec:
+  type: service
+  lifecycle: production
+  owner: thirdparty
+  providesApis:
+    - 3p-apis
