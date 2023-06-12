@@ -52,3 +52,22 @@ spec:
     - component:Loans
     - component:Invest
 ---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: Auth0 Services
+spec:
+  type: openapi
+  lifecycle: production
+  owner: thirdparty
+---
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: CNS services
+spec:
+  type: openapi
+  lifecycle: production
+  owner: thirdparty
+---
+  
