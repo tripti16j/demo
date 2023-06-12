@@ -51,27 +51,27 @@ spec:
     - component:SCF
     - component:Loans
     - component:Invest
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: Auth0_Services
-spec:
-  type: openapi
-  lifecycle: production
-  owner: thirdparty
-  definition:
-    $text: 
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: CNS_services
-spec:
-  type: openapi
-  lifecycle: production
-  owner: thirdparty
-  definition:
-    $text: 
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: API
+# metadata:
+#   name: Auth0_Services
+# spec:
+#   type: openapi
+#   lifecycle: production
+#   owner: thirdparty
+#   definition:
+#     $text: 
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: API
+# metadata:
+#   name: CNS_services
+# spec:
+#   type: openapi
+#   lifecycle: production
+#   owner: thirdparty
+#   definition:
+#     $text: 
 ---
   
