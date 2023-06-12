@@ -10,8 +10,8 @@ metadata:
     - postman
   system:
     - ocs
-  annotations:
-    documentation: "https://documenter.getpostman.com/view/15548094/"
+#   annotations:
+#     backstage.io/techdocs-ref: "https://documenter.getpostman.com/view/15548094/"
     
     environment: "production"
   links:
@@ -23,18 +23,18 @@ metadata:
       title: Jenkins Dashboard
       icon: dashboard
       type: jenkins-dashboard
-    # - url: https://documenter.getpostman.com/view/15548094/TzXwFe7Q
-    #   title: APIs/Swagger link
-    #   icon: dashboard
-    #   type: postman-dashboard
-    # - url: https://documenter.getpostman.com/view/15548094/TzY7dtsP
-    #   title: User Service Apis
-    #   icon: dashboard
-    #   type: postman-dashboard
-    # - url: https://documenter.getpostman.com/view/15548094/2s847PKA4L
-    #   title: CNS
-    #   icon: dashboard
-    #   type: postman-dashboard
+    - url: https://documenter.getpostman.com/view/15548094/TzXwFe7Q
+      title: APIs/Swagger link
+      icon: dashboard
+      type: postman-dashboard
+    - url: https://documenter.getpostman.com/view/15548094/TzY7dtsP
+      title: User Service Apis
+      icon: dashboard
+      type: postman-dashboard
+    - url: https://documenter.getpostman.com/view/15548094/2s847PKA4L
+      title: CNS
+      icon: dashboard
+      type: postman-dashboard
 spec:
   type: service
   lifecycle: production
