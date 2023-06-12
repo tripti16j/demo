@@ -13,7 +13,7 @@ metadata:
 #   annotations:
 #     backstage.io/techdocs-ref: "https://documenter.getpostman.com/view/15548094/"
     
-    environment: "production"
+#     environment: "production"
   links:
     - url: https://goyubi.atlassian.net/jira/software/c/projects/CP/boards/53?quickFilter=186
       title: Jira Dashboard
