@@ -1,0 +1,54 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: Platform Service
+  description: plat auth
+  tags:
+    - jenkins
+    - jira 
+    - postman
+  system:
+    - ocs
+  annotations:
+    documentation: "https://documenter.getpostman.com/view/15548094/"
+    
+    environment: "production"
+  links:
+    - url: https://goyubi.atlassian.net/jira/software/c/projects/CP/boards/53?quickFilter=186
+      title: Jira Dashboard
+      icon: dashboard
+      type: jira-dashboard
+    - url: https://jenkins.dso.credavenue.io/job/Platforms/job/UserAuth/job/Api/job/Prd/
+      title: Jenkins Dashboard
+      icon: dashboard
+      type: jenkins-dashboard
+    # - url: https://documenter.getpostman.com/view/15548094/TzXwFe7Q
+    #   title: APIs/Swagger link
+    #   icon: dashboard
+    #   type: postman-dashboard
+    # - url: https://documenter.getpostman.com/view/15548094/TzY7dtsP
+    #   title: User Service Apis
+    #   icon: dashboard
+    #   type: postman-dashboard
+    # - url: https://documenter.getpostman.com/view/15548094/2s847PKA4L
+    #   title: CNS
+    #   icon: dashboard
+    #   type: postman-dashboard
+spec:
+  type: service
+  lifecycle: production
+  owner: platform-team
+  system: platform
+        
+  consumesApis: 
+    - [Auth0 Services]
+    - [CNS services]
+  dependsOn: 
+    - Credit
+    - Pools
+    - Co-lending
+    - SCF
+    - Loans
+    - Invest
+---
