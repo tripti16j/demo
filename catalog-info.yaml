@@ -61,7 +61,7 @@ spec:
   lifecycle: production
   owner: thirdparty
   definition:
-    $text: https://3p-cir-qa.go-yubi.in/v2/api-docs
+    $text: 
 ---
 apiVersion: backstage.io/v1alpha1
 kind: API
@@ -72,6 +72,6 @@ spec:
   lifecycle: production
   owner: thirdparty
   definition:
-    $text: https://3p-cir-qa.go-yubi.in/v2/api-docs
+    $text: 
 ---
   
