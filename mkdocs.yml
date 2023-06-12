@@ -1,0 +1,7 @@
+site_name: "Documentation for OCS Service"
+
+nav:
+  - Overview: index.md
+
+plugins:
+  - techdocs-core
