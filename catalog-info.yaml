@@ -45,10 +45,10 @@ spec:
     - Auth0 Services
     - CNS services
   dependsOn: 
-    - Credit
-    - Pools
-    - Co-lending
-    - SCF
-    - Loans
-    - Invest
+    - component:Credit
+    - component:Pools
+    - component:Co-lending
+    - component:SCF
+    - component:Loans
+    - component:Invest
 ---
