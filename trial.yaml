@@ -27,7 +27,7 @@ metadata:
     jira/project-key: CRD
     backstage.io/code-coverage: scm-only
     backstage.io/techdocs-ref: dir:.
-    backstage.io/managed-by-location: http://github.com/backstage/backstage/blob/master/mkdocs.yml
+    backstage.io/managed-by-location: https://github.com/tripti16j/demo/blob/master/mkdocs.yml
     # jira/component: <example-component> # optional, you might skip this value to fetch data for all components
     # jira/token-type: Bearer # optional, used for Activity stream feed. If you are using Basic auth you can skip this.
   # Example for optional annotations
