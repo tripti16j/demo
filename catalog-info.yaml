@@ -42,8 +42,8 @@ spec:
   system: platform
         
   consumesApis: 
-    - [Auth0 Services]
-    - [CNS services]
+    - Auth0 Services
+    - CNS services
   dependsOn: 
     - Credit
     - Pools
