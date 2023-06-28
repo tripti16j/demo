@@ -26,8 +26,8 @@ spec:
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: CreditOCSService
-  description: OCSService APIs
+  name: Trial
+  # description: OCSService APIs
   labels:
     example.com/custom: custom_label_value
   annotations:
