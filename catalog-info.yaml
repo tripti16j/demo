@@ -14,14 +14,14 @@ metadata:
   description: Credit domain description
 spec:
   owner: credit
----
-apiVersion: backstage.io/v1alpha1
-kind: System
-metadata:
-  name: OCS
-spec:
-  owner: credit
-  domain: credit
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: System
+# metadata:
+#   name: OCS
+# spec:
+#   owner: credit
+#   domain: credit
 ---
 apiVersion: backstage.io/v1alpha1
 kind: Component
@@ -55,7 +55,7 @@ spec:
   type: service
   owner: group:credit
   lifecycle: production
-  system: OCS
+  # system: OCS
   providesApis:
 #    - test-api
     - flex-api
