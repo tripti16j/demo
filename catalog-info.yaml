@@ -85,49 +85,49 @@ spec:
 #    message ExampleMessage {
 #      string example = 1;
 #    };
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: flex-api
-spec:
-  type: openapi
-  lifecycle: production
-  owner: group:credit
-#  system: OCS
-  definition:
-    $text: https://cir-ocs-qa.go-yubi.in/v2/api-docs
----
-apiVersion: backstage.io/v1alpha1
-kind: API
-metadata:
-  name: 3p-apis
-spec:
-  type: openapi
-  lifecycle: production
-  owner: thirdparty
-  definition:
-    $text: https://3p-cir-qa.go-yubi.in/v2/api-docs
----
-apiVersion: backstage.io/v1alpha1
-kind: Resource
-metadata:
-  name: ocs-db
-  description: Stores OCS data in Mongo db
-spec:
-  type: database
-  owner: credit
-#  system: OCS
-  lifecycle: production
----
-apiVersion: backstage.io/v1alpha1
-kind: Component
-metadata:
-  name: 3p-component
-  description: Third party APIs service
-spec:
-  type: service
-  lifecycle: production
-  owner: thirdparty
-  providesApis:
-    - 3p-apis
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: API
+# metadata:
+#   name: flex-api
+# spec:
+#   type: openapi
+#   lifecycle: production
+#   owner: group:credit
+# #  system: OCS
+#   definition:
+#     $text: https://cir-ocs-qa.go-yubi.in/v2/api-docs
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: API
+# metadata:
+#   name: 3p-apis
+# spec:
+#   type: openapi
+#   lifecycle: production
+#   owner: thirdparty
+#   definition:
+#     $text: https://3p-cir-qa.go-yubi.in/v2/api-docs
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Resource
+# metadata:
+#   name: ocs-db
+#   description: Stores OCS data in Mongo db
+# spec:
+#   type: database
+#   owner: credit
+# #  system: OCS
+#   lifecycle: production
+# ---
+# apiVersion: backstage.io/v1alpha1
+# kind: Component
+# metadata:
+#   name: 3p-component
+#   description: Third party APIs service
+# spec:
+#   type: service
+#   lifecycle: production
+#   owner: thirdparty
+#   providesApis:
+#     - 3p-apis
