@@ -36,7 +36,7 @@ metadata:
     backstage.io/code-coverage: scm-only
     backstage.io/techdocs-ref: dir:.
     newrelic.com/dashboard-guid: Mjg0NjIxOXxWSVp8REFTSEJPQVJEfGRhOjM2MTM0MTM
-    sonarqube.org/project-key: Drive-project-yubi
+    sonarqube.org/project-key: Drive project yubi/Drive-project-yubi
     # jira/component: <example-component> # optional, you might skip this value to fetch data for all components
     # jira/token-type: Bearer # optional, used for Activity stream feed. If you are using Basic auth you can skip this.
   # Example for optional annotations
